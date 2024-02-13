@@ -128,6 +128,7 @@ export default {
     display: flex;
     padding: 50px 200px;
     flex-wrap: wrap;
+    margin: auto;
 
     .card {
         width: calc(100% / 3 - 10px);
