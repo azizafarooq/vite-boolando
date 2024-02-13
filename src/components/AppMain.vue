@@ -115,10 +115,10 @@ export default {
     <main class="container">
         <div v-for="product in cards" class="card">
             <div>
-                <img :src="product.frontImage" alt="">
+                <img src="../assets/img/1.webp" alt=""> <!--Mettere dinamicamente-->
                 <p> {{ product.brand }} </p>
                 <h3>{{ product.name.toUpperCase() }}</h3>
-                <p class="price">{{ product.price }} €</p>
+                <p>{{ product.price }} €</p>
             </div>
         </div>
     </main>
@@ -126,20 +126,13 @@ export default {
 <style scoped lang="scss">
 .container {
     display: flex;
-    margin: auto;
     padding: 50px 200px;
-    border: 1px dashed red;
     flex-wrap: wrap;
 
     .card {
-        width: 33.3%;
-        border: 1px dashed red;
+        width: calc(100% / 3 - 10px);
         margin-bottom: 20px;
-    }
-
-    .price {
-        color: red;
-        margin-left: 5px;
+        margin-left: 10px;
     }
 }
 </style>

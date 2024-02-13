@@ -17,9 +17,8 @@ export default {
 footer {
     color: white;
     background-color: hsl(0deg 0% 10.2%);
+    padding: 3rem 200px;
     display: flex;
-    padding: 1.5rem 200px;
-    margin-top: auto;
     align-items: center;
     justify-content: space-between;
 }
