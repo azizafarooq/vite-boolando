@@ -1,4 +1,5 @@
 <script>
+import AppCard from './AppCard.vue';
 export default {
     data() {
         return {
@@ -108,19 +109,15 @@ export default {
             ]
 
         }
-    }
+    },
+    components: { AppCard }
 }
 </script>
 <template>
     <main class="container">
-        <div v-for="product in cards" class="card">
-            <div>
-                <img :src="`../assets/img/${product.frontImage}`" alt="">
-                <p> {{ product.brand }} </p>
-                <h3>{{ product.name.toUpperCase() }}</h3>
-                <p>{{ product.price }} €</p>
-            </div>
-        </div>
+        <AppCard v-for="product in cards" :img="`../assets/img/${product.frontImage}`" :name="product.name"
+            :brand="product.brand" :price="product.price">
+        </AppCard>
     </main>
 </template>
 <style scoped lang="scss">
@@ -129,11 +126,5 @@ export default {
     padding: 50px 200px;
     flex-wrap: wrap;
     margin: auto;
-
-    .card {
-        width: calc(100% / 3 - 10px);
-        margin-bottom: 20px;
-        margin-left: 10px;
-    }
 }
 </style>
