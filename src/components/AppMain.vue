@@ -115,6 +115,7 @@ export default {
     <main class="container">
         <div v-for="product in cards" class="card">
             <div>
+                <img :src="product.frontImage" alt="">
                 <p> {{ product.brand }} </p>
                 <h3>{{ product.name.toUpperCase() }}</h3>
                 <p class="price">{{ product.price }} €</p>
@@ -138,6 +139,7 @@ export default {
 
     .price {
         color: red;
+        margin-left: 5px;
     }
 }
 </style>
