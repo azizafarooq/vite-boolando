@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="card">
+    <div @click="$emit('showProduct')" class="card">
         <img :src="`../assets/img/${frontImage}`" alt="">
         <p> {{ brand }} </p>
         <h3>{{ name.toUpperCase() }}</h3>
@@ -23,5 +23,6 @@ export default {
     width: calc(100% / 3 - 10px);
     margin-bottom: 20px;
     margin-left: 10px;
+    cursor: pointer;
 }
 </style>
