@@ -20,14 +20,18 @@ export default {
     methods: {
         handleCardOpen() {
             store.modal.show = true;
+        },
+
+        handleCardClose() {
+            store.modal.show = false;
         }
     }
 }
 </script>
 <template>
     <main class="container">
-        <AppCard v-for="product in products" @showProduct="handleCardOpen" :img="`../assets/img/${product.frontImage}`"
-            :name="product.name" :brand="product.brand" :price="product.price">
+        <AppCard v-for="product in products" @showProduct="handleCardOpen" @closeCard="handleCardClose"
+            :img="`../assets/img/${product.frontImage}`" :name="product.name" :brand="product.brand" :price="product.price">
         </AppCard>
     </main>
 </template>

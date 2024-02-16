@@ -1,15 +1,35 @@
 <script>
+import { store } from '../store/index';
 export default {
     data() {
         return {
+            store,
+        }
+    },
 
+    props: {
+        frontImage: String,
+        brand: String,
+        name: String,
+        price: String,
+    },
+
+    methods: {
+        handleCardClose() {
+            this.store.modal.show = false;
         }
     }
 }
 </script>
 <template>
     <div class="layover">
-        <div class="modal"></div>
+        <div class="modal">
+            <p> {{ name }} </p>
+            <p>{{ brand }} </p>
+            <p>{{ price }} €</p>
+            <i @click="handleCardClose" class="fa-solid fa-xmark"></i>
+        </div>
+
     </div>
 </template>
 <style lang="scss" scoped>
@@ -32,7 +52,20 @@ export default {
         width: 80%;
         max-width: 900px;
         background-color: white;
-        padding: 1rem;
+        padding: 2rem;
+        position: relative;
+
+        .fa-xmark {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        img {
+            width: 50%;
+        }
     }
 }
 </style>

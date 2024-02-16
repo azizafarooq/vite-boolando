@@ -18,7 +18,7 @@ export default {
 <template>
   <div class="app-container">
     <AppHeader></AppHeader>
-    <AppModal v-if="store.modal.show"></AppModal>
+    <AppModal v-if="this.store.modal.show"></AppModal>
     <AppMain></AppMain>
     <AppFooter></AppFooter>
   </div>
